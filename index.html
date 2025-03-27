@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Status RPG</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="menu" class="container">
+        <h1>Saudações! O que você deseja?</h1>
+        <button class="menu-button" onclick="showOption(1)">1. Total de Pontos Gastos e Outras Informações de Personagem</button>
+        <button class="menu-button" onclick="showOption(2)">2. Cálculo Rápido de Pontos de Vida</button>
+        <button class="menu-button" onclick="showOption(3)">3. Gasto Para Evolução de Status</button>
+        <button class="menu-button" onclick="showOption(4)">4. Distribuir Pontos em Tempo Real</button>
+    </div>
+    
+    <!-- Option 1: Total Points Spent -->
+    <div id="option1" class="container hidden">
+        <h2>Total de Pontos Gastos e Outras Informações</h2>
+        <div>
+            <label for="forca1">Força:</label>
+            <input type="number" id="forca1" min="0" oninput="validateNumber(this)">
+            
+            <label for="destreza1">Destreza:</label>
+            <input type="number" id="destreza1" min="0" oninput="validateNumber(this)">
+            
+            <label for="agilidade1">Agilidade:</label>
+            <input type="number" id="agilidade1" min="0" oninput="validateNumber(this)">
+            
+            <label for="resistencia1">Resistência:</label>
+            <input type="number" id="resistencia1" min="0" oninput="validateNumber(this)">
+            
+            <label for="inteligencia1">Inteligência:</label>
+            <input type="number" id="inteligencia1" min="0" oninput="validateNumber(this)">
+            
+            <label for="carisma1">Carisma:</label>
+            <input type="number" id="carisma1" min="0" oninput="validateNumber(this)">
+            
+            <button onclick="calculateOption1()">Calcular</button>
+            <button class="secondary" onclick="showMenu()">Voltar</button>
+        </div>
+        
+        <div id="result1" class="result-box hidden"></div>
+    </div>
+    
+    <!-- Option 2: Quick HP Calculation -->
+    <div id="option2" class="container hidden">
+        <h2>Cálculo Rápido de Pontos de Vida</h2>
+        <div>
+            <label for="nivel2">Nível:</label>
+            <input type="number" id="nivel2" min="0" oninput="validateNumber(this)">
+            
+            <label for="resistencia2">Resistência:</label>
+            <input type="number" id="resistencia2" min="0" oninput="validateNumber(this)">
+            
+            <button onclick="calculateOption2()">Calcular</button>
+            <button class="secondary" onclick="showMenu()">Voltar</button>
+        </div>
+        
+        <div id="result2" class="result-box hidden"></div>
+    </div>
+    
+    <!-- Option 3: Status Evolution Cost -->
+    <div id="option3" class="container hidden">
+        <h2>Gasto Para Evolução de Status</h2>
+        <div>
+            <label for="a1">Valor inicial:</label>
+            <input type="number" id="a1" min="0" oninput="validateNumber(this)">
+            
+            <label for="an">Valor final:</label>
+            <input type="number" id="an" min="0" oninput="validateNumber(this)">
+            
+            <button onclick="calculateOption3()">Calcular</button>
+            <button class="secondary" onclick="showMenu()">Voltar</button>
+        </div>
+        
+        <div id="result3" class="result-box hidden"></div>
+    </div>
+    
+    <!-- Option 4: Real-time Point Distribution -->
+    <div id="option4" class="container hidden">
+        <h2>Distribuir Pontos em Tempo Real</h2>
+        <div>
+            <label for="forca4">Força:</label>
+            <input type="number" id="forca4" min="0" oninput="validateNumber(this)">
+            
+            <label for="destreza4">Destreza:</label>
+            <input type="number" id="destreza4" min="0" oninput="validateNumber(this)">
+            
+            <label for="agilidade4">Agilidade:</label>
+            <input type="number" id="agilidade4" min="0" oninput="validateNumber(this)">
+            
+            <label for="resistencia4">Resistência:</label>
+            <input type="number" id="resistencia4" min="0" oninput="validateNumber(this)">
+            
+            <label for="inteligencia4">Inteligência:</label>
+            <input type="number" id="inteligencia4" min="0" oninput="validateNumber(this)">
+            
+            <label for="carisma4">Carisma:</label>
+            <input type="number" id="carisma4" min="0" oninput="validateNumber(this)">
+            
+            <label for="pontos4">Pontos Para Distribuir:</label>
+            <input type="number" id="pontos4" min="0" oninput="validateNumber(this)">
+            
+            <button onclick="startDistribution()">Começar Distribuição</button>
+            <button class="secondary" onclick="showMenu()">Voltar</button>
+        </div>
+        
+        <div id="distribution-interface" class="hidden">
+            <h3>Distribua Seus Pontos</h3>
+            
+            <div id="status-controls"></div>
+            
+            <div id="extra-info" class="info-display">
+                <div class="info-item" id="nivel-info">Nível: 0</div>
+                <div class="info-item" id="hp-info">HP: 0</div>
+                <div class="info-item" id="effort-info">Effort: 0d12, 0d20, 0d50</div>
+            </div>
+            
+            <div class="info-item" id="pontos-restantes">Pontos Restantes: 0</div>
+            
+            <button class="secondary" onclick="showMenu()">Voltar</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
