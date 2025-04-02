@@ -1,0 +1,8 @@
+estilizar melhor (titulos, cores, flexbox)
+botao de voltar funcionar no celular 
+valores maximos
+centralizar
+diminuir tamanho da caixa de texto 
+resolver a barra vertical no celular 
+botoes maiores de subir e descer 
+colocar alguns strongs 
