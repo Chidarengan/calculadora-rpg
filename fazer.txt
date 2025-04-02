@@ -6,3 +6,4 @@ diminuir tamanho da caixa de texto
 resolver a barra vertical no celular 
 botoes maiores de subir e descer 
 colocar alguns strongs 
+hit do que cada opçao faz 
